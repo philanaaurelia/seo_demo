@@ -1,8 +1,9 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
+import git
 from flask_behind_proxy import FlaskBehindProxy
 from forms import RegistrationForm
 from flask_sqlalchemy import SQLAlchemy
-import git
+
 
 
 # gets name of the .py file so Flask knows it's name
@@ -45,7 +46,7 @@ def register():
 
 @app.route("/update_server", methods=['POST'])
 def webhook():
-    if request.method == 'POST':
+    if self.request.method == 'POST':
         repo = git.Repo('/home/demo2seo/mysite/seo_ses12')
         origin = repo.remotes.origin
         origin.pull()
