@@ -46,7 +46,7 @@ def register():
 
 @app.route("/update_server", methods=['POST'])
 def webhook():
-    if self.request.method == 'POST':
+    if request.method == 'POST':
         repo = git.Repo('/home/demo2seo/mysite/seo_ses12')
         origin = repo.remotes.origin
         origin.pull()
